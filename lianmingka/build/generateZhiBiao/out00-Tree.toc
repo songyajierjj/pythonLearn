@@ -1,0 +1,5 @@
+('d:\\program\\python34\\lib\\site-packages\\pymysql-0.7.11-py3.4.egg',
+ None,
+ {'*.pyo', '*.so', '*.pyc', '*.pyd', '*.py', 'EGG-INFO'},
+ 'DATA',
+ [])
