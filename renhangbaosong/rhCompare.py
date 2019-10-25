@@ -23,7 +23,7 @@ def querySql(report_date,line_type):
 
     hisList = []
     hisCertNo = ""
-    resultTxt = open("D:/project/python/mysql/"+report_date+"_"+line_type+".txt","a",encoding='GBK')
+    resultTxt = open("D:/project/git/python/mysql/"+report_date+"_"+line_type+".txt","a",encoding='GBK')
     writeData = ""
     for result in sqlResult:
         if hisCertNo == "":
