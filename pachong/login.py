@@ -8,13 +8,13 @@ def main():
         logging.basicConfig(stream=file,
                         level=logging.DEBUG,
                         format='time:%(asctime)s,message:%(message)s')
-        readData = json.loads(open("D:/logs/queryrh/renghang.txt").read())
-        userAgent = readData['userAgent']
-        contentType = readData['contentType']
-        origin = readData['origin']
-        referer = readData['referer']
-        postUrl = readData['postUrl']
-        postData = json.loads(readData['postData'])
+        # readData = json.loads(open("D:/logs/queryrh/renghang.txt").read())
+        userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+        contentType = "application/x-www-form-urlencoded"
+        origin = "http://9.16.15.119"
+        referer = "http://9.16.15.119/shcreditunion/logon.do?isDissentLogin=null"
+        postUrl = "http://9.16.15.119/shcreditunion/logon.do?isDissentLogin=null"
+        # postData = json.loads(readData['postData'])
         header = {
             "Content-Type": contentType,
             "Origin": origin,

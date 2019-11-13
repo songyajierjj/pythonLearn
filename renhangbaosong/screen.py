@@ -85,7 +85,7 @@ def getAccountDict(path):
     readAccountInfo = open(path,"r",encoding='UTF-8')
     accountDict = {}
     for accountInfo in readAccountInfo:
-        accountDict[accountInfo.split(",")[2]] = "1"
+        accountDict[accountInfo.split(",")[2].replace("\n","")] = "1"
     return accountDict;
 
 
@@ -100,10 +100,21 @@ if __name__ == "__main__":
     # count = readAllFolder("D:\\project\\git\\python\\renhangbaosong\\cydexport\\",accountDict)
     # print("cyd="+str(count))
 
-    accountDict = getAccountDict("D:\\project\\git\\python\\renhangbaosong\\all.txt")
-    print("all="+str(len(accountDict)))
-    count = readAllFolder("D:\\project\\git\\python\\renhangbaosong\\export\\",accountDict)
-    print("count="+str(count))
+    # accountDict = getAccountDict("D:\\project\\git\\python\\renhangbaosong\\data\\all.txt")
+    # print("all="+str(len(accountDict)))
+    # count = readAllFolder("D:\\project\\git\\python\\renhangbaosong\\data\\export\\",accountDict)
+    # print("count="+str(count))
+
+    # li = ["ety", "xyz", "hello", "world"]
+    # s = ",".join(li)
+    # print(s)
+
+    readTradeInfo = open("D:\\project\\git\\python\\renhangbaosong\\data\\开户数据.txt","r",encoding='utf-8')
+    # updateSql = "update from rh_trade_info set billing_date = '20190921',recent_pay_date='20190921' where report_date = '20190922' and account in ("
+    updateSql = ""
+    for tradeInfo in readTradeInfo:
+    	updateSql = updateSql + "'" + tradeInfo.split(",")[2].replace("\n","") + "',"
+    print(updateSql)
 
     # print('\n'.join([''.join([('Love'[(x-y) % len('Love')] if ((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3 <= 0 else ' ') for x in range(-30, 30)]) for y in range(30, -30, -1)]))
 
